@@ -1,24 +1,3 @@
-/* .img-fluid {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  padding: 50px;
-}
-
-
-
-.twt {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  margin: 20px;
-  width: 100%;
-  height: 70px;
-  border: 1px solid gray;
-
-  text-align: center;
-} */
 body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -50,10 +29,6 @@ code {
   border-top-right-radius: 300px;
   border-bottom-right-radius: 300px;
 }
-/* .moviePosterDialog {
-  width: 100%;
-  height: 100%;
-} */
 .moviePosterDetail {
   height: 40vh;
 }
@@ -116,10 +91,6 @@ code {
   right: "0px";
   color: "red";
 }
-/* .resultContainer { */
-/* padding-right: 40px; */
-/* padding-left: 11vh; */
-/* } */
 
 /* 
 center results */
@@ -128,8 +99,6 @@ center results */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* width: 30px;
-  height: 30px; */
 }
 .movieCard {
   /* display: inline-block; */

@@ -8,25 +8,12 @@ import HighQualityIcon from '@material-ui/icons/HighQuality';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
-
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-
 import IconButton from "@material-ui/core/IconButton";
-
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
-
-
 import { useTheme } from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ScriptTag from 'react-script-tag';
-
-
-
-
-
-
-
 
 const Detail = (props) => {
   const theme = useTheme();
@@ -36,16 +23,10 @@ const Detail = (props) => {
   const [openfs, setOpenfs] = React.useState(false);
   const [openSeries, setOpenSeries] = React.useState(false);
   const [openTrailer, setOpenTrailer] = React.useState(false);
-
-  const [openYTS, setOpenYTS] = React.useState(false);
-
-
-  
-
+  const [openYTS, setOpenYTS] = React.useState(false); 
   const [movielink, setmovielink] = useState();
   const [serieslink, setserieslink] = useState();
   const [ytlink, setytlink] = useState();
-  
   const [poster, setposter] = useState("https://webinars.motivatingthemasses.com/fromgood2unforgettable/images/poster-loading.gif");
   const [year, setyear] = useState("Loading...");
   const [genre, setgenre] = useState("Loading...");
@@ -57,10 +38,9 @@ const Detail = (props) => {
   const [season,setseason]=useState("01");
   const [sandbox,setSandbox]=useState(true);
   const [magnetUri,setmagnetUri]=useState("");
-
-  
+ 
   axios
-    .get(`https://www.omdbapi.com/?apikey=e630e8d2&i=${props.imval}`)
+    .get(`https://www.omdbapi.com/?apikey=d7156077&i=${props.imval}`)
     .then((res) => {
       setposter(res.data.Poster);
       setyear("(" + res.data.Year + ")");
@@ -74,28 +54,13 @@ const Detail = (props) => {
       
         `javascript:window.location.replace("https://database.gdriveplayer.io/player.php?imdb=${props.imval}")`
        // `https://videospider.in/getvideo?key=Ez99ULqORLkSi7LH&video_id=${props.imval}`
-      
       );
       setserieslink(
-      
         `javascript:window.location.replace("https://gomo.to/show/${props.imval}/01-01")`
        //` https://moviehungershaven.xyz/itv/tvs1.php?imdbid=${props.imval}&season=1&episode=1`
       // `https://fsapi.xyz/tv-tmdb/84105-2-4`
-      
-      );
-      
-      
+      );   
     });
-
-    
-      
-
-
-  
-
-    
-  
-
   const handleClose = () => {
     setOpen(false);
     props.funsetdetailbool();
@@ -103,14 +68,12 @@ const Detail = (props) => {
   const handleClickOpenFs = () => {
     setOpenfs(true);
   };
-
   const handleCloseFs = () => {
     setOpenfs(false);
   };
   const handleClickOpenSeries = () => {
     setOpenSeries(true);
   };
-
   const handleCloseSeries = () => {
     setOpenSeries(false);
   };
@@ -118,64 +81,41 @@ const Detail = (props) => {
     if(mtype==='movie')
     {
     axios
-    .get(`https://api.themoviedb.org/3/movie/${props.imval}/videos?api_key=d8bf019d0cca372bd804735f172f67e8`)
+    .get(`https://api.themoviedb.org/3/movie/${props.imval}/videos?api_key=752fe9c98f0794c32c7a9aac81fbb79f`)
     .then((res) => {
      // console.log(res.data.results[0].key);
-    
      setytlink("https://www.youtube.com/embed/"+res.data.results[0].key);
      //https://api.themoviedb.org/3/tv/79352/videos?api_key=d8bf019d0cca372bd804735f172f67e8
      setOpenTrailer(true);
-
-
     })
     .catch((error) => {
-      alert("No trailer found for this movie!!!");
-      
+      alert("No trailer found for this movie!!!");  
     });
   }
   else
   {
     axios
-    .get(`https://api.themoviedb.org/3/find/${props.imval}?api_key=d8bf019d0cca372bd804735f172f67e8&external_source=imdb_id`)
+    .get(`https://api.themoviedb.org/3/find/${props.imval}?api_key=752fe9c98f0794c32c7a9aac81fbb79f&external_source=imdb_id`)
     .then((res) => {
       //console.log(res.data.tv_results[0].id);
-    
-    
    // alert(res.data.tv_results[0].id);
    axios
-   .get(`https://api.themoviedb.org/3/tv/`+res.data.tv_results[0].id+`/videos?api_key=d8bf019d0cca372bd804735f172f67e8`)
+   .get(`https://api.themoviedb.org/3/tv/`+res.data.tv_results[0].id+`/videos?api_key=752fe9c98f0794c32c7a9aac81fbb79f`)
    .then((res) => {
     // console.log(res.data.results[0].key);
-    
-   
    setytlink("https://www.youtube.com/embed/"+res.data.results[0].key);
    setOpenTrailer(true);
-
    })
    .catch((error) => {
-     alert("No trailer found for this web series!!!");
-     
+     alert("No trailer found for this web series!!!");  
    });
-    
-    
-
     })
     .catch((error) => {
       alert("No trailer found for this web series!!");
       
-    });
-     
-    
-    
-    
-   
-    
-  }
-    
+    }); 
+  }   
   };
-  
-  
-
   const handleCloseTrailer = () => {
     setOpenTrailer(false);
   };
@@ -236,10 +176,6 @@ const Detail = (props) => {
   const handleCloseYTS = () => {
     setOpenYTS(false);
   };
-
- 
-
-
   return (
     <>
     
@@ -250,10 +186,7 @@ const Detail = (props) => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        // TransitionComponent={Transition}
-      
-        
-         
+        // TransitionComponent={Transition}      
       >
        
        <div className="movieDataDiv " >
@@ -284,9 +217,7 @@ const Detail = (props) => {
             color: "white",
             width: "50px",
             height: "50px",
-            background: "rgb(0,0,0,0.3)"
-            
-            
+            background: "rgb(0,0,0,0.3)"  
           }}
         >
           <YouTubeIcon  fontSize="large" />
@@ -306,13 +237,9 @@ const Detail = (props) => {
       <span style={{float:"left"}}>{genre}</span>
        {/* <span>Type:{mtype}</span> */}
       
-      <i style={{color:"gray",float:"left",marginTop:"10px"}}>{plot}</i>
-      
-      
-      
+      <i style={{color:"gray",float:"left",marginTop:"10px"}}>{plot}</i>  
       <Chip
         label={imdbrate}
-       
         style={{
           background: "#ffea00",color:"black",borderRadius:"5px",marginTop:"10px",fontWeight:"bolder"}}
       />
@@ -323,34 +250,17 @@ const Detail = (props) => {
           marginTop:"10px", borderRadius:"5px",marginLeft:"10px",fontWeight:"bolder"}}
       />
       <br/>
-         
-      
       </div>
         </div>
-
-      
-        
-       
-           
-
-
          {/* btn to full screen  */}
-
          <div>
-      
-
-     
-
-
-      <Dialog
+     <Dialog
         fullScreen={fullScreen}
         open={openfs}
         onClose={handleCloseFs}
         aria-labelledby="responsive-dialog-title"
-        // TransitionComponent={Transition}
-        
+        // TransitionComponent={Transition} 
       >
-       
             <iframe
           src={movielink}
           title="movieServer"
@@ -361,12 +271,6 @@ const Detail = (props) => {
           //sandbox="allow-same-origin allow-scripts allow-forms"
           {...(sandbox ? {sandbox:'allow-same-origin allow-scripts allow-forms'}:{})}
         />
-         
-
-          
-
-          
-      
           <IconButton
           onClick={handleCloseFs}
           style={{
@@ -377,10 +281,8 @@ const Detail = (props) => {
             width: "60px",
             height: "60px",
             background: "rgb(0,0,0,0.5)",
-            borderRadius: "100%",
-            
+            borderRadius: "100%",  
           }}>
-
            <ArrowBackIcon fontSize="large" />
         
           </IconButton>
@@ -393,9 +295,7 @@ const Detail = (props) => {
               height: "50px",
               background: "rgb(0,0,0,0.5)",
               padding:"5px",
-              borderRadius:"5px"
-            
-              
+              borderRadius:"5px"   
             }}>
 
           <select 
@@ -404,24 +304,19 @@ const Detail = (props) => {
             onChange={ 
               (event)=>
               { 
-                
                 if(event.target.value ==='https://videospider.in/getvideo?key=Ez99ULqORLkSi7LH&video_id=')
                 {
                   setSandbox(false);
-             // alert("videospider");
-                  
+             // alert("videospider");   
                 }
                 else
                 {
                   setSandbox(true);
-               
                  
                 }
-             
                 setmovielink(event.target.value+`${props.imval}`);
               }
               }
-         
           >
             <option value="https://database.gdriveplayer.io/player.php?imdb=">Server 1</option>
             <option value="https://gomo.to/movie/">Server 2</option>
@@ -434,34 +329,20 @@ const Detail = (props) => {
           <IconButton
            onClick={handleClickOpenYTS}
           >
-
            <HighQualityIcon  color="primary" fontSize="large" />
-        
           </IconButton>
-
           </Button>
-          </ButtonGroup>
-
-          
-
-         
-       
+          </ButtonGroup> 
       </Dialog>
     </div>
-
-
       </Dialog>
-
      {/* series iframe */}
-
      <Dialog
         fullScreen={fullScreen}
         open={openSeries}
         onClose={handleCloseSeries}
-        aria-labelledby="responsive-dialog-title"
-        
+        aria-labelledby="responsive-dialog-title"  
       > 
-     
         <iframe
           src={serieslink}
           title="movieServer"
@@ -516,9 +397,7 @@ const Detail = (props) => {
               height: "50px",
               background: "rgb(0,0,0,0.5)",
               padding:"5px",
-              borderRadius:"5px"
-            
-              
+              borderRadius:"5px"    
             }}
           >
             <option value="01" selected="selected">Episode</option>
@@ -533,9 +412,6 @@ const Detail = (props) => {
             <option value="09" >Ep 9</option>
             <option value="10" >Ep 10</option>
             </select>
-
-           
-      
           <IconButton
           onClick={handleCloseSeries}
           style={{
@@ -546,40 +422,26 @@ const Detail = (props) => {
             width: "60px",
             height: "60px",
             background: "rgb(0,0,0,0.5)",
-            borderRadius: "100%",
-            
+            borderRadius: "100%",  
           }}>
-
            <ArrowBackIcon fontSize="large" />
-        
-          </IconButton>
- 
-         
-
-          
+          </IconButton>  
       </Dialog>
-      
       {/* for trailer */}
       <Dialog
         fullScreen={fullScreen}
         open={openTrailer}
         onClose={handleCloseTrailer}
-        aria-labelledby="responsive-dialog-title"
-        
+        aria-labelledby="responsive-dialog-title" 
       > 
-      
       <iframe
-       
       src={ytlink}
       title="TrailerServer"
       width="100%"
       height="100%"
       id="myTrailer"
       style={{ border: "none" }}
-
-
       />
-
       <IconButton
           onClick={handleCloseTrailer}
           style={{
@@ -593,17 +455,9 @@ const Detail = (props) => {
             borderRadius: "100%",
             
           }}>
-
            <ArrowBackIcon fontSize="large" />
-        
           </IconButton>
-      
-      
-      
-      
       </Dialog>
-
-
       {/* yts component */}
       <Dialog
         fullScreen={fullScreen}
@@ -612,10 +466,7 @@ const Detail = (props) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         
-      >
-        
-        
-          
+      > 
           <IconButton
           onClick={handleCloseYTS}
           style={{
@@ -629,9 +480,7 @@ const Detail = (props) => {
             borderRadius: "100%",
             
           }}>
-
            <ArrowBackIcon fontSize="large" />
-        
           </IconButton>
           <Button
         variant="contained"
@@ -644,33 +493,17 @@ const Detail = (props) => {
           width: "60px",
           height: "60px",
           background: "rgb(0,0,0,0.5)",
-          borderRadius: "100%",
-          
+          borderRadius: "100%",  
         }}
       >
         <a href={'magnet:?xt=urn:btih:'+magnetUri} download style={{textDecoration:"none", color:"white"}}>
           <CloudDownloadIcon />
         </a>
       </Button>
-     
         {/* <Magnet magnetUri={magnetUri}/> */}
         <div id="player" className="webtor" ></div>
-        <ScriptTag type="text/javascript" src='https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js' />
-        
-       
-        
-          
- 
-
-
-
-
-         
-       
+        <ScriptTag type="text/javascript" src='https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js' /> 
       </Dialog>
-    
-
-
     </>
   );
 };

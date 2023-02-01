@@ -1,29 +1,7 @@
 
-<!-- PROJECT LOGO -->
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://watchanymoviez.web.app/">
-    <img src="https://github.com/amoldalwai/Movie-Spider/blob/main/WatchAnyMovieLogo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">WatchAnyMovie</h3>
-
   <p align="center">
  A free movie and webseries streaming application built using React,TMDb API, Firebase and Movie Spider API that lets you watch the movies and webseries directly on your browser.
-    <br />
-    <a href="https://github.com/amoldalwai/watch-any-movie/"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://watchanymoviez.web.app/">View Demo</a>
-    ·
-    <a href="https://github.com/amoldalwai/watch-any-movie/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/amoldalwai/watch-any-movie/issues">Request Feature</a>
-  </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -58,40 +36,14 @@
 ## About The Project
 
 
-<p align="center">
-  <a href="https://watchanymoviez.web.app/">
-    <img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/homepage_macbookgold_front.png" alt="Logo" width="500" height="500">
-  </a>
-</p>
-
 A Netflix Clone App built using React JS , Material UI , TMDb API and Movie Spider API that allows searching of 10000+ movies and webseries and provides information about their plot, IMDB rating, MetaScore, Genre, and Year in which it is released, along with high-quality audio and video streaming from various servers using custom made Movie Spider API.
 
 Features:
-* Signup & Login with ForgetPassword and Logout feature using Firebase along with hosting.
 * Searching for 10000+ movies and webseries through TMDb API.
 * Streaming Movies and webseries from various servers using Movie Spider API.
 * Material UI to provide a Netflix like experience.
 
 The site is made for educational purposes!
-
-### Screenshots
-<p align="center">
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191557.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191510.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191533.png" width="250" height="450" /> 
-</p>
-<p align="center">
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191310.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191337.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191362.png" width="250" height="450" /> 
-</p>
-<p align="center">
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191385.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191409.png" width="250" height="450" /> 
-<img src="https://github.com/amoldalwai/watch-any-movie/blob/main/screenshot/Photos/1628604191438.png" width="250" height="450" /> 
-</p>
-
-
 
 ### Built With
 List of major frameworks used in building the project. including Add-ons/plugins for acknowledgement.
@@ -176,9 +128,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@your_twitter](https://twitter.com/@di-meshak) - meshakokelo@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/mesho254/repo_name)
 
 
 
@@ -195,23 +147,3 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
 * [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png

@@ -19,7 +19,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import Detail from "./Detail";
 
 const List = () => {
-  const [stext, setstext] = useState("avengers");
+  const [stext, setstext] = useState("heist");
   const [result, setresult] = useState([]);
   const [result2, setresult2] = useState([]);
   const [open, setOpen] = React.useState(false);
@@ -32,7 +32,7 @@ const List = () => {
   };
   const show = () => {
     axios
-      .get(`https://www.omdbapi.com/?apikey=4eb65943&s=${stext}`)
+      .get(`https://www.omdbapi.com/?apikey=d7156077&s=${stext}`)
       .then((res) => {
         setresult(res.data.Search.map((p) => p));
       })
@@ -46,17 +46,13 @@ const List = () => {
 
   const show2 = () => {
     axios
-    .get(`https://www.omdbapi.com/?apikey=5fcb333a&s=${stext}&page=2`)
+    .get(`https://www.omdbapi.com/?apikey=d7156077&s=${stext}&page=2`)
     .then((res) => {
       setresult2(res.data.Search.map((s) => s));
       
     })
-    .catch((error) => {
-     
+    .catch((error) => {  
     });
-    
-      
-
   };
   function showDetail(i) {
     setdetailbool(true);
@@ -74,7 +70,6 @@ const List = () => {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
@@ -113,7 +108,6 @@ const List = () => {
 	]}
 
 />
-
       <center>
         <div className=" navbar-dark bg-dark">
           <br />
@@ -136,8 +130,10 @@ const List = () => {
             color="primary"
             aria-label="add"
             style={{
-              background: "#b71c1c",
-              borderRadius: "7px",
+              position: "relative",
+              top: "-3px",
+              background: "#A9A5A5",
+              borderRadius: "3px",
             }}
             onClick={show}
           >
@@ -174,7 +170,7 @@ const List = () => {
                         <PlayCircleFilledIcon
                           className="playHoverIcon"
                           fontSize="large"
-                          style={{ color: "#aa2e25", fontSize: "60px" }}
+                          style={{ color: "#B58DC9", fontSize: "60px" }}
                         />
                       </div>
                     </div>
@@ -209,7 +205,7 @@ const List = () => {
                         <PlayCircleFilledIcon
                           className="playHoverIcon"
                           fontSize="large"
-                          style={{ color: "#aa2e25", fontSize: "60px" }}
+                          style={{ color: "#B58DC9", fontSize: "60px" }}
                         />
                       </div>
                     </div>
@@ -228,12 +224,8 @@ const List = () => {
         open={open}
         autoHideDuration={1500}
         onClose={handleClose}
-        style={{marginTop:"20vh"}}
-        
+        style={{marginTop:"20vh"}}  
         message="No search results found !!"/>
-
-       
-
         {detailbool ? (
           <Detail imval={imval} funsetdetailbool={funsetdetailbool} />
         ) : null}

@@ -1,13 +1,10 @@
 import ScriptTag from 'react-script-tag';
 import React, { Component } from 'react';
-
-
-       
+      
 class Magnet extends Component {
+    // eslint-disable-next-line no-useless-constructor
     constructor(props) {
-        super(props);
-       
-        
+        super(props);       
     }
     render(){
         window.webtor = window.webtor || [];
@@ -23,9 +20,7 @@ class Magnet extends Component {
                 if (e.name == window.webtor.TORRENT_ERROR) {
                     console.log('Torrent error!');
                 }
-            },
-            
-            
+            },     
             lang: 'en',
             i18n: {
                 en: {
@@ -45,12 +40,9 @@ class Magnet extends Component {
             <div>
                 
                 <div id="player" className="webtor" ></div>
-                <ScriptTag type="text/javascript" src='https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js' />
-                
+                <ScriptTag type="text/javascript" src='https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js' />              
             </div>
         );
     }
-    
-    
 }
 export default Magnet;

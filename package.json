@@ -1,7 +1,7 @@
 {
   "name": "watchmovie",
   "version": "0.1.0",
-  "homepage": "https://amoldalwai.github.io/watch-any-movie",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@cliqz/adblocker-webextension": "^1.18.8",
